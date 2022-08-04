@@ -1,0 +1,25 @@
+<div class="d-flex center">
+    <form [formGroup]="form">
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Email</mat-label>
+            <input matInput type="text" name="email" id="email" formControlName="email">
+        </mat-form-field>
+        
+        <br>
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Password</mat-label>
+            <input matInput type="password" name="password" id="password" formControlName="password">
+        </mat-form-field>
+        
+        <br>
+        <button mat-raised-button type="button" (click)="login()" [disabled]="buttonDisabled">Iniciar sesión</button>
+
+        <p *ngIf="userEmail != ''">
+            El correo del usuario es: {{form.controls['email'].value}}
+        </p>
+
+        <p *ngIf="token != ''">
+            El token es: {{token}}
+        </p>
+    </form>
+</div>
